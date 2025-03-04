@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @font-face {
 	font-family: 'Archangelsk';
-	src: url('fonts/Archangelsk.ttf') format('truetype');
+	src: url('../fonts/Archangelsk.ttf') format('truetype');
 }
 /*Обнуление*/
 *{
@@ -43,70 +43,56 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
 
-.first_block{
-	height: 1000px;
-	width: 1920px;
-	background: url(../img/first_back.jpg);
-}
-.header_first{
+.container{
+	margin: 0 auto;
 	width: 1280px;
-	height: 74px;
+}
+
+.main {
+	position: relative;
+	width: 100%;
+	height: 1000px;
+	background: url(../img/first_back.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.header-first{
 	display: flex;
-	margin: 0px 320px 0px 320px;
+	justify-content: space-between;
+	align-items: center;
 	padding-top: 20px;
 }
 
-.logo_header{
+.logo-header{
 	width: 640px;
 	height: 74px;
 	flex:1;
 }
-.social_header{
-	margin-top: 22px;
-	margin-left: 261px;
-	width: 640px;
-	height: 74px;
-	flex:1;
-}
+
 .cyberpunk_logo{
 height: 74px;
 width: 296px;
 }
-.youtube_header{
-height: 30px;
-width: 30px;
-margin-right: 40px;
+
+.social-header {
+	display: flex;
+	gap: 40px;
 }
-.vk_header{
-	height: 30px;
-	width: 30px;
-	margin-right: 40px;
-}
-.facebook_header{
-	height: 30px;
-	width: 30px;
-	margin-right: 40px;
-}
-.twitter_header{
-	height: 30px;
-	width: 30px;
-	margin-right: 40px;
-}
-.twitch_header{
-	height: 30px;
-	width: 28,36px;
-	margin-right: 40.64px;
-}
-.instagram_header{
+
+.social-header img {
 	height: 30px;
 	width: 30px;
 }
+
 .yelow_block{
+	position: absolute;
 	background-color: #F8F200;
 	width: 624px;
-	height: 369px;	
-	margin: 557px 320px 0px 976px;
-	clip-path: polygon(8% 0, 100% 0, 100% 86%, 92% 100%, 0 100%, 0 14%);	
+	height: 369px;
+	clip-path: polygon(8% 0, 100% 0, 100% 86%, 92% 100%, 0 100%, 0 14%);
+	bottom: 0;
+	left: 50%;
 
 }
 .top_yelow{
@@ -139,25 +125,19 @@ margin-right: 40px;
 	text-align: center;
 	font-size: 24px;
 	font-family: Roboto;
-	
-	
 }
-.container{
-	margin: 0 auto;
-  width: 1280px;
-}
-.second_block{
-	margin: 0 auto;
-	width: 1920px;
-	height: 777px;
 
+.description {
+	margin: 0 auto;
+	margin-bottom: 70px;
 }
+
 .second_block_top{
 	height: 353px;
 }	
 .nc_change{
 	font-size: 62px;
-	font-weight: 400px;
+	font-weight: 400;
 	padding-top: 70px;
 	font-family: archangelsk;
 }
@@ -181,15 +161,22 @@ line-height: 34px;
 .Rectangle_1{
 	padding-bottom: 32px;
 }
-.gradient{
-	width: 1920px;
+
+.gradient {
+	width: 100%;
 	height: 70px;
+	background-image: url(../img/gradient.png);
 }
-.third_block{
-	width: 1920px;
-	height: 814px;
+
+.gradient-bottom {
+	background-image: url(../img/2-gradient.png);
+}
+
+.form-block{
 	background-color: black;
+	padding-bottom: 70px;
 }
+
 .third_block_play{
 	width: 1280px;
 	height: 132px;
@@ -204,7 +191,7 @@ line-height: 34px;
 	font-size: 62px;
 	margin-top: 55px;
 	margin-left: 32px;
-	line-height: 63,3px;
+	line-height: 63.3px;
 	color: #FFFFFF;
 	flex: 1;
 	font-family: archangelsk;
@@ -231,7 +218,7 @@ margin-top: 39px;
 	flex: 1;
 }
 
-.form_name{
+.form_name {
 	width: 460px;
 	height: 35px;
 	background-color: black;
@@ -241,16 +228,30 @@ margin-top: 39px;
 	line-height: 21.09px;
 	border-bottom: 1px solid white;
 }
-.form_mail{
+
+.form_mail {
 	width: 460px;
 	height: 35px;
 	background-color: black;
-	color: white;
 	font-family: roboto;
-	font-size: 18px;
 	line-height: 21.09px;
 	border-bottom: 1px solid white;
 }
+
+.form_name::placeholder {
+	color: white;
+	font-size: 18px;
+	font-weight: 400;
+	font-family: Roboto;
+}
+
+.form_mail::placeholder {
+	color: white;
+	font-size: 18px;
+	font-weight: 400;
+	font-family: Roboto;
+}
+
 .form_49{
 	margin-bottom: 35px;
 }
@@ -260,21 +261,24 @@ margin-top: 39px;
 	height: 70px;
 }
 
-.acceprt_form{
+.acceprt_form {
 	font-family: roboto;
 	font-size: 12px;
 	color: white;
-	line-height: 14.06px;
+
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
+
 .fourths_block{
 	background-color: #F8F200;
-	height: 676px;
-	width: 1920px;
-	
+	padding-bottom: 70px;
 }
+
 .fourths_blockSS{
 	display: flex;
-    justify-content: space-between; /* Размещаем элементы по краям */
+  justify-content: space-between;
 	padding-top: 70px;
 }
 .monitor_logo{
@@ -339,24 +343,24 @@ font-family: roboto;
 	margin-top: 59px;
 }
 .five_block{
-	
-	height: 717px;
-	width: 1920px;
 	display: flex;
-    justify-content: space-between; /* Размещаем элементы по краям */
+	justify-content: center;
 }
+
 .disk{
 	display: block;
+	width: 50%;
 }
+
 .buy{
 	background-color: black;
-	width: 976px;
-	height: 717px;
+	width: 50%;
 }
+
 .buy_p{
 	font-family: archangelsk;
 	font-size: 62px;
-	line-height: 63,3px;
+	line-height: 63.3px;
 	color: #FFFFFF;
 	width: 624px;
 	height: 126px;
